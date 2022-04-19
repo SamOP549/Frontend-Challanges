@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --Paleblue: hsl(225, 100%, 94%);
+    --Brightblue: hsl(245, 75%, 52%);
+    --Verypaleblue: hsl(225, 100%, 98%);
+    --Desaturatedblue: hsl(224, 23%, 55%);
+    --Darkblue: hsl(223, 47%, 23%);
+}
+
+body{
+    background-image: url("images/pattern-background-desktop.svg");
+    background-color: var(--Paleblue);
+    background-repeat: no-repeat;
+    font-family: 'Red Hat Display', sans-serif; 
+}
+
+#order{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.card{
+    width: 30%;
+    background: white;
+    text-align: center;
+    border-radius: 0.9em;
+    font-size: 1rem;
+    margin-top: 30px;
+    margin-bottom: 30px
+}
+.photo img{
+    width: 100%;
+    border-radius: 0.9em 0.9em 0 0;
+}
+
+h1{
+    font-weight: 900;
+    color: var(--Darkblue);
+    font-size: 1.7em;
+    padding: .5em;
+}
+
+p{
+    color: var(--Desaturatedblue);
+    font-weight: 500;
+    padding: .5em;
+}
+
+.rateCard{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    background: var(--Verypaleblue);
+    border-radius: .8em;
+    width: 90%;
+    padding: .5em 0 .5em 0;
+}
+
+h2{
+    font-size: 1rem;
+    margin-bottom: 0;
+    font-weight: 700;
+    color: var(--Darkblue);
+}
+
+.summary{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.rateCard .change{
+    color: var(--Brightblue);
+}
+
+.rateCard .change:hover{
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.cta{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 1.5em auto 1.2em auto;
+}
+
+.btn{
+    background-color: var(--Brightblue);
+    text-decoration: none;
+    color: white;
+    padding: 0.8em;
+    border-radius: 0.8em;
+    margin-bottom: 2em;
+    font-weight: 700;
+    box-shadow: 0 10px 20px grey;
+}
+
+.btn:active{
+    opacity: 0.8;
+}
+
+.cancel{
+    text-decoration: none;
+    font-weight: 700;
+    color: var(--Desaturatedblue);
+}
+
+.cancel:active{
+    color: var(--Darkblue);
+}
+
+footer{
+    background: hsl(225, 100%, 94%);
+  }
+  
+  @media (max-width: 760px){
+  
+    body{
+      background-image: url("images/pattern-background-mobile.svg");
+      background-repeat: no-repeat;
+    }
+  
+    .rateCard{
+      width:100%
+    }
+  
+    .card{
+      width:90%;
+    }
+  }
