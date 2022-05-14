@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --desaturated-Red: hsl(0, 36%, 70%);
+  --soft-Red: hsl(0, 93%, 68%);
+  --dark-Grayish-Red: hsl(0, 6%, 24%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: linear-gradient(
+      135deg,
+      hsl(0, 0%, 100%),
+      hsl(0, 100%, 98%)
+    );
+  }
+  
+  img {
+    max-width: 100%;
+  }
+
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .left {
+    background-image: url('./images/bg-pattern-desktop.svg');
+    background-size: cover;
+    background-position: center center;
+    padding: 0 2.2rem 2.2rem;
+    width: 60%;
+  }
+
+  .logo {
+    margin: 60px 0;
+    width: 160px;
+  }
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    letter-spacing: 1rem;
+    font-weight: 400;
+    margin: 3rem 0;
+  }
+
+  h1 span {
+    font-weight: 300;
+    color: var(--desaturated-Red);
+  }
+
+  p{
+    color: var(--desaturated-Red);
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: comeinright 0.5s ease forwards;
+    transform: translateX(100%);
+  }
+
+  .content {
+    max-width: 450px;
+    margin: auto;
+  }
+  
+  .right {
+    width: 40%;
+  }
+
+  .bg-image {
+    background-image: url('./images/hero-desktop.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .bg-mobile {
+    display: none;
+  }
+
+  form {
+    position: relative;
+    transform: translateX(-100%);
+    animation: comeinleft 0.5s ease forwards;
+  }
+
+  input {
+    background-color: transparent;
+    border: 1px solid hsl(0, 36%, 70%);
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 1.5rem 2rem;
+    height: 2.8rem;
+    width: 80%;
+  }
+
+  input:focus {
+    border-width: 2px;
+    box-shadow: 0px 0px 10px hsla(0, 36%, 70%, 0.5);
+    outline: none;
+  }
+
+  input::placeholder {
+    color: hsl(0, 36%, 70%);
+  }
+  
+  form.error input {
+    border: 2px solid var(--soft-Red);
+  }
+  
+  button {
+    background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    box-shadow: 2px 5px 10px hsla(0, 36%, 70%, 0.5);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 1rem;
+    position: absolute;
+    top: 0;
+    right: 4.3rem;
+    transition: opacity 0.2s ease;
+    height: 3rem;
+    width: 4.5rem;
+  }
+
+  button:hover {
+    opacity: 0.6;
+  }
+  
+  .error-icon {
+    display: none;
+    position: absolute;
+    top: 0.8rem;
+    right: 9.5rem;
+  }
+  
+  form.error .error-icon {
+    display: block;
+  }
+  
+  small {
+    font-size: 1rem;
+    color: var(--soft-Red);
+    font-weight: 300;
+    display: none;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  small.error {
+    display: flex;
+  }
+  
+  /* Animations */
+  @keyframes comeinleft {
+    to {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes comeinright {
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .attribution {
+    font-size: 1rem;
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+
+  @media screen and (max-width: 600px) {
+    .container {
+      display: flex;
+    }
+  
+    .content {
+      margin: 0;
+      overflow: hidden;
+    }
+  
+    .content__main {
+      padding: 2rem;
+    }
+  
+    h1,
+    p {
+      text-align: center;
+    }
+  
+    .bg-mobile {
+      display: flex;
+      margin: 0;
+      width: 95%;
+    }
+  
+    .right {
+      display: none;
+    }
+  
+    .left {
+      padding: 0;
+      width: 120%;
+    }
+  
+    .logo {
+      margin: 2rem 0;
+      width: 100px;
+    }
+  
+    h1 {
+      font-size: 2.2rem;
+    }
+  
+    input {
+      width: 100%;
+    }
+  
+    button {
+      right: -1.8rem;
+    }
+  
+    .error-icon {
+      right: 3rem;
+    }
+  
+    .attribution {
+      font-size: 0.7rem;
+    }
+  }
+  
